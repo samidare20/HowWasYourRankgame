@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
+using HowWasYourRankgame;
 
 // ==========================================
 // [SECTION 1] 실행 로직
@@ -94,19 +95,3 @@ catch (Exception ex)
 {
     Console.WriteLine($"\n[에러 발생] {ex.Message}");
 }
-
-// ==========================================
-// [SECTION 2] 클래스/레코드 정의
-// ==========================================
-
-// 경고 해결: string 뒤에 '?'를 붙여서 "null일 수도 있다"고 알려주거나, 기본값을 줍니다.
-public class AppConfig
-{
-    public string RiotApiKey { get; set; } = string.Empty;
-    public string DiscordWebhookUrl { get; set; } = string.Empty;
-    public string GameName { get; set; } = string.Empty;
-    public string TagLine { get; set; } = string.Empty;
-}
-
-public record AccountDto(string puuid, string gameName, string tagLine);
-public record SummonerDto(string id, string accountId, string puuid, string name, long summonerLevel);
